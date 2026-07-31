@@ -1,4 +1,4 @@
-// playwright.config.js
+﻿// playwright.config.js
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
@@ -14,13 +14,11 @@ module.exports = defineConfig({
     trace: 'retain-on-failure',
   },
 
-  // Sobe um servidor estático servindo a raiz do repositório
-  // (onde estão index.html, og-preview.png e a pasta links/)
   webServer: {
     command: 'npx http-server . -p 8080 -s',
     url: 'http://localhost:8080',
     reuseExistingServer: !process.env.CI,
-    timeout: 10_000,
+    timeout: 10000,
   },
 
   projects: [
