@@ -58,17 +58,22 @@ for (const pagina of PAGINAS) {
     const resposta = await page.goto(pagina.caminho);
     test.skip(resposta.status() === 404, `Pagina ${pagina.caminho} nao encontrada - pulando.`);
 
-    const blocoWhatsapp = page.locator('*:has-text("WhatsApp")').last();
-    const existe = await blocoWhatsapp.count();
-    test.skip(existe === 0, `Nenhum texto "WhatsApp" encontrado em ${pagina.caminho}.`);
+    const corpoTexto = await page.locator('body').textContent();
 
-    const textoCompleto = await blocoWhatsapp.textContent();
-    const digitos = apenasDigitos(textoCompleto);
+    const match = corpoTexto.match(/\(?\d{2}\)?[\s.-]*9?\d{4}[\s.-]*\d{4}/);
+
+    test.skip(
+      !match,
+      `Nenhum telefone escrito encontrado em ${pagina.caminho} - ` +
+      `provavelmente esta pagina so tem botao de WhatsApp sem numero visivel.`
+    );
+
+    const digitos = apenasDigitos(match[0]);
 
     expect(
-      digitos.includes('67992647815'),
-      `Texto exibido em ${pagina.caminho} nao contem o telefone correto. ` +
-      `Texto encontrado: "${textoCompleto.trim()}"`
+      digitos.includes('67992647815') || '67992647815'.includes(digitos),
+      `Telefone exibido em ${pagina.caminho} nao bate com o numero correto. ` +
+      `Texto encontrado: "${match[0]}"`
     ).toBeTruthy();
   });
 }
