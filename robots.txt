@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /draisadoraterra-testes/
+
+Sitemap: https://draisadora.com.br/sitemap.xml
