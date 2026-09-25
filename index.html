@@ -209,6 +209,52 @@ footer{background:var(--marrom);padding:80px;display:grid;grid-template-columns:
   .tric-section{padding:64px 24px}
   .depoimentos{padding:64px 24px}
 }
+/* ==============================
+   TRAJETORIA
+   ============================== */
+.trajetoria{background:var(--cream);padding:100px 80px}
+.traj-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start;margin-top:56px}
+.traj-quote{position:relative}
+.traj-aspas{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:96px;line-height:.6;height:44px;color:var(--cobre);margin-bottom:8px}
+.traj-quote blockquote{padding-left:36px;border-left:1px solid rgba(200,132,90,.35);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(22px,2.3vw,30px);line-height:1.55;color:var(--verde)}
+.traj-quote blockquote em{color:var(--cobre);font-style:italic}
+.traj-assin{display:flex;align-items:center;gap:14px;margin-top:32px;padding-left:36px}
+.traj-assin::before{content:'';width:40px;height:1px;background:var(--cobre);flex-shrink:0}
+.traj-assin span{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--marrom);font-weight:400}
+.traj-sub{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--cobre);margin-bottom:24px;font-weight:400}
+.traj-timeline{list-style:none;position:relative;padding-left:28px}
+.traj-timeline::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:1px;background:rgba(200,132,90,.3)}
+.traj-item{position:relative;padding:0 0 28px}
+.traj-item:last-child{padding-bottom:0}
+.traj-item::before{content:'';position:absolute;left:-28px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--cream);border:1px solid var(--cobre)}
+.traj-tag{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,55,40,.5);margin-bottom:6px}
+.traj-item h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;color:var(--verde);line-height:1.25}
+.traj-item p{font-size:13px;font-weight:300;color:#7a6a5a;line-height:1.6;margin-top:4px}
+.consulta{margin-top:96px}
+.consulta-head{display:flex;align-items:baseline;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px}
+.consulta-head h3{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,40px);font-weight:300;color:var(--verde);line-height:1.15}
+.consulta-head h3 em{font-style:italic;color:var(--cobre)}
+.consulta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(200,132,90,.18)}
+.consulta-passo{background:white;padding:44px 36px;position:relative;transition:background .4s}
+.consulta-passo:hover{background:var(--offwhite)}
+.consulta-num{display:block;font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:var(--cobre);line-height:1;margin-bottom:20px;opacity:.85}
+.consulta-passo h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--verde);margin-bottom:12px}
+.consulta-passo p{font-size:14px;font-weight:300;color:#7a6a5a;line-height:1.7}
+.consulta-nota{margin-top:36px;display:flex;align-items:center;gap:20px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--marrom);line-height:1.6}
+.consulta-nota::before{content:'\2727';font-style:normal;color:var(--cobre);font-size:20px;flex-shrink:0}
+@media(max-width:1000px){
+  .trajetoria{padding:80px 48px}
+  .traj-grid{grid-template-columns:1fr;gap:56px}
+  .consulta{margin-top:72px}
+  .consulta-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .trajetoria{padding:64px 24px}
+  .traj-quote blockquote,.traj-assin{padding-left:22px}
+  .traj-aspas{font-size:72px;height:34px}
+  .consulta-passo{padding:32px 24px}
+  .consulta-nota{font-size:17px;align-items:flex-start}
+}
 </style>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "adf5dcc895a34e8d8d5fdc978afb9a66"}'></script><!-- End Cloudflare Web Analytics -->
 <script type="application/ld+json">
@@ -229,11 +275,32 @@ footer{background:var(--marrom);padding:80px;display:grid;grid-template-columns:
         "propertyID": "CRBM",
         "value": "59228"
       },
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "Registro profissional",
-        "name": "CRBM 59228"
-      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Registro profissional",
+          "name": "CRBM 59228"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "Bacharelado em Biomedicina",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "UCDB — Universidade Católica Dom Bosco"
+          },
+          "dateCreated": "2023-12"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Pós-graduação Lato Sensu",
+          "name": "Pós-graduação Lato Sensu em Tricologia",
+          "locationCreated": {
+            "@type": "Place",
+            "name": "Cascavel, PR"
+          }
+        }
+      ],
       "knowsAbout": [
         "Tricologia",
         "Saúde capilar",
@@ -251,7 +318,13 @@ footer{background:var(--marrom);padding:80px;display:grid;grid-template-columns:
       ],
       "worksFor": {
         "@id": "https://draisadora.com.br/#consultorio"
-      }
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "UCDB — Universidade Católica Dom Bosco"
+        }
+      ]
     },
     {
       "@type": [
@@ -414,6 +487,34 @@ footer{background:var(--marrom);padding:80px;display:grid;grid-template-columns:
     <div class="valor-card reveal reveal-delay-2"><div class="valor-icon">&#9672;</div><h4>Ci&ecirc;ncia Aplicada</h4><p>Biom&eacute;dica com especializa&ccedil;&atilde;o em tricologia e est&eacute;tica avan&ccedil;ada.</p></div>
     <div class="valor-card reveal reveal-delay-3"><div class="valor-icon">&#9671;</div><h4>Resultado Natural</h4><p>Resultados que revelam o seu melhor, sem exageros ou artificialidade.</p></div>
     <div class="valor-card reveal reveal-delay-4"><div class="valor-icon">&#10047;</div><h4>Cuidado Completo</h4><p>Al&eacute;m da est&eacute;tica, cuida da sua autoestima e bem-estar.</p></div>
+  </div>
+</section>
+<section class="trajetoria" id="trajetoria">
+  <div class="section-label reveal"><span>Minha trajet&oacute;ria</span></div>
+  <h2 class="section-title reveal reveal-delay-1">Ci&ecirc;ncia, escuta<br>e <em>cuidado</em></h2>
+  <div class="traj-grid">
+    <figure class="traj-quote reveal reveal-delay-1">
+      <span class="traj-aspas" aria-hidden="true">&ldquo;</span>
+      <blockquote>Escolhi a tricologia porque amo cuidar das pessoas <em>al&eacute;m da est&eacute;tica</em>. O cabelo &eacute; um reflexo do que est&aacute; acontecendo no corpo e na vida de cada paciente, e entender essa conex&atilde;o &eacute; o que mais me apaixona no meu trabalho.</blockquote>
+      <figcaption class="traj-assin"><span>Dra Isadora Terra Reis</span></figcaption>
+    </figure>
+    <div class="reveal reveal-delay-2">
+      <p class="traj-sub">Forma&ccedil;&atilde;o</p>
+      <ol class="traj-timeline">
+        <li class="traj-item"><span class="traj-tag">Gradua&ccedil;&atilde;o &middot; 2023</span><h3>Bacharelado em Biomedicina</h3><p>UCDB &mdash; Universidade Cat&oacute;lica Dom Bosco</p></li>
+        <li class="traj-item"><span class="traj-tag">P&oacute;s-gradua&ccedil;&atilde;o &middot; Lato Sensu</span><h3>Tricologia</h3><p>Cascavel/PR</p></li>
+        <li class="traj-item"><span class="traj-tag">Est&eacute;tica</span><h3>Habilita&ccedil;&atilde;o e cursos complementares</h3><p>Incluindo harmoniza&ccedil;&atilde;o facial</p></li>
+      </ol>
+    </div>
+  </div>
+  <div class="consulta">
+    <div class="consulta-head reveal"><h3>Como &eacute; a sua<br><em>primeira consulta</em></h3></div>
+    <div class="consulta-grid">
+      <div class="consulta-passo reveal"><span class="consulta-num">01</span><h4>A gente conversa</h4><p>Quero entender sua rotina, seu hist&oacute;rico de sa&uacute;de e o que te trouxe at&eacute; aqui. Cada detalhe importa para o diagn&oacute;stico.</p></div>
+      <div class="consulta-passo reveal reveal-delay-1"><span class="consulta-num">02</span><h4>Exame tricosc&oacute;pico</h4><p>Avaliamos de perto o couro cabeludo e os fios para entender o que realmente est&aacute; acontecendo.</p></div>
+      <div class="consulta-passo reveal reveal-delay-2"><span class="consulta-num">03</span><h4>Plano personalizado</h4><p>S&oacute; depois desse levantamento completo eu monto um plano de tratamento feito para voc&ecirc;.</p></div>
+    </div>
+    <p class="consulta-nota reveal">Na est&eacute;tica funciona da mesma forma: nada de protocolo padr&atilde;o. Eu escuto o que voc&ecirc; realmente precisa antes de indicar qualquer tratamento.</p>
   </div>
 </section>
 <section class="diferenciais" id="diferenciais">
